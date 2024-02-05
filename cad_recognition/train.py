@@ -123,7 +123,7 @@ def non_max_suppression(prediction, conf_thres=0.25, iou_thres=0.45, classes=Non
 def collate(data_list):
     r"""Collates a python list of data objects to the internal storage
     format of :class:`torch_geometric.data.InMemoryDataset`."""
-    keys = data_list[0].keys
+    keys = list(data_list[0].keys())
     data = data_list[0].__class__()
 
     for key in keys:

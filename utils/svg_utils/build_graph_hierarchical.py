@@ -49,7 +49,7 @@ def getConnnectedComponent(node_dict):
     pos = node_dict['pos']['spatial']
     is_control = node_dict['attr']['is_control']
     #print(edges)
-    adj = np.eye(pos.shape[0], pos.shape[0]).astype(np.bool)
+    adj = np.eye(pos.shape[0], pos.shape[0]).astype(np.bool_)
     for e in edges:
         adj[e[0], e[1]] = True
         adj[e[1], e[0]] = True
@@ -228,7 +228,7 @@ def getSuperNode(node_dict):
             ))
 
     super_super_edges = []
-    parent_child = np.zeros((len(bboxs), len(bboxs))).astype(np.bool)
+    parent_child = np.zeros((len(bboxs), len(bboxs))).astype(np.bool_)
     for i, parent_bb in enumerate(bboxs):
         for j, child_bb in enumerate(bboxs):
             if i == j: continue
@@ -268,9 +268,9 @@ def getSuperNode(node_dict):
             get_child(child_i, is_children)
 
     for parent_i, all_children in enumerate(parent_child):
-        non_direct_children = np.zeros(all_children.shape[0]).astype(np.bool)
+        non_direct_children = np.zeros(all_children.shape[0]).astype(np.bool_)
         for child_i, is_child in enumerate(all_children):
-            is_children = np.zeros(all_children.shape[0]).astype(np.bool)
+            is_children = np.zeros(all_children.shape[0]).astype(np.bool_)
             if not is_child: continue
             get_child(child_i, is_children)
             non_direct_children |= is_children
@@ -339,9 +339,9 @@ if __name__ == '__main__':
             #node_dict['attr']['color'] = np.concatenate([node_dict['attr']['color'], super_color], axis = 0)
             #node_dict['edge']['super'] = np.concatenate([shape_shape_edges, super_shape_edges, super_super_edges], axis = 0)
             node_dict['edge']['super'] = np.concatenate([shape_shape_edges, cross_shape_edges], axis = 0)
-            #node_dict['attr']['is_control'] = np.concatenate([node_dict['attr']['is_control'], np.zeros((super_pos.shape[0], 1)).astype(np.bool)], axis = 0)
-            #node_dict['attr']['is_super'] = np.concatenate([np.zeros((start_end_size, 1)).astype(np.bool), np.ones((super_pos.shape[0], 1)).astype(np.bool)], axis = 0)
-            node_dict['attr']['is_super'] = np.zeros((start_end_size, 1)).astype(np.bool)
+            #node_dict['attr']['is_control'] = np.concatenate([node_dict['attr']['is_control'], np.zeros((super_pos.shape[0], 1)).astype(np.bool_)], axis = 0)
+            #node_dict['attr']['is_super'] = np.concatenate([np.zeros((start_end_size, 1)).astype(np.bool_), np.ones((super_pos.shape[0], 1)).astype(np.bool_)], axis = 0)
+            node_dict['attr']['is_super'] = np.zeros((start_end_size, 1)).astype(np.bool_)
             node_dict['edge_attr']['super'] = np.concatenate([shape_shape_edge_attr, cross_shape_edge_attr], axis = 0)
             #print(node_dict['attr']['is_control'].shape, node_dict['attr']['is_super'].shape)
             node_dict['img_width'] = width

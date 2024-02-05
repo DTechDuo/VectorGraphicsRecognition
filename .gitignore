@@ -1,3 +1,16 @@
+# project`s specific
+logs/*
+log/*
+data/FloorPlansGraph5_iter/*
+data/diagrams/*
+.conda/*
+# don`t exclude
+!test_list.txt
+!train_list.txt
+!test_list.txt
+!val_list2.txt
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
