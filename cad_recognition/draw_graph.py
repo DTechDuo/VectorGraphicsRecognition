@@ -39,7 +39,7 @@ if __name__ == "__main__":
     test_loader = DataLoader(test_dataset, 
         batch_size=opt.batch_size, 
         shuffle=False, 
-        num_workers=8, 
+        num_workers=6, 
         collate_fn = InMemoryDataset.collate)   
 
     with torch.no_grad():
