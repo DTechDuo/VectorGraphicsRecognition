@@ -13,7 +13,7 @@ import torch_geometric.transforms as T
 import logging
 
 from config import OptInit
-from architecture import SparseCADGCN, DetectionLoss
+from architecture3cc_rpn_gp_iter2 import SparseCADGCN, DetectionLoss
 from utils.ckpt_util import load_pretrained_models
 from utils.metrics import AverageMeter
 from train import collate
@@ -40,7 +40,7 @@ def main():
     elif opt.graph == 'bezier_cc_bb_iter':
         from  Datasets.graph_dict3 import SESYDFloorPlan as CADDataset
 
-    test_dataset = CADDataset(opt.data_dir, opt, partition = opt.phase, data_aug = False, do_mixup = False)
+    test_dataset = CADDataset(opt.data_dir, opt, partition = opt.phase, data_aug = False)#, do_mixup = False)
     test_loader = DataLoader(test_dataset, 
         batch_size=opt.batch_size, 
         shuffle=False, 
