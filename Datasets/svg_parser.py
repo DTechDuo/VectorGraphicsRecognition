@@ -765,9 +765,12 @@ class SVGGraphBuilderBezier:
 class SVGParser:
     def __init__(self, filepath):
         self.dom = parse(filepath)
+        print(filepath)
+        print(self.dom)
         self.root = self.dom.documentElement
         self.shapes = ['line', 'path', 'circle']
-        self.filtered_nodename = ['image', 'g', 'defs']
+        self.filtered_nodename = ['image', 'g', 'defs', 'sodipodi:namedview', 'desc',  
+                                  'defs', 'marker', 'pattern', 'symbol']
 
     def _traverse_tree(self, root, ret_list, parent_attrs):
         parent_attrs = copy.copy(parent_attrs)
@@ -781,14 +784,14 @@ class SVGParser:
             if child.nodeType == Node.ELEMENT_NODE:
                 if child.nodeName in self.shapes:
                     attrs = child.attributes.items()
-                    #print(attrs, child.nodeType)
+                    print(child.nodeName)
                     attr_dict = copy.copy(parent_attrs)
                     for att in attrs:
                         attr_dict[att[0]] = att[1]
                     attr_dict['shape_name'] = child.nodeName
                     ret_list.append(attr_dict)
                 elif child.nodeName not in self.filtered_nodename:
-                    print('node is not a supported shape', child.tagName)
+                    print('node is not a supported shape', child.nodeName)
                     raise SystemExit
             self._traverse_tree(child, ret_list, parent_attrs)
 

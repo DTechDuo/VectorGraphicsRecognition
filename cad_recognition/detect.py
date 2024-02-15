@@ -6,7 +6,7 @@ from __future__ import division
 import __init__
 
 from config import OptInit
-from architecture import SparseCADGCN, DetectionLoss
+from architecture3cc_rpn_gp_iter2 import SparseCADGCN, DetectionLoss
 from Datasets.svg import SESYDFloorPlan
 from utils.ckpt_util import load_pretrained_models, load_pretrained_optimizer, save_checkpoint
 from utils.det_util import get_batch_statistics, ap_per_class
@@ -152,7 +152,7 @@ if __name__ == "__main__":
         from  Datasets.graph_dict3 import SESYDFloorPlan as CADDataset
     
 
-    test_dataset = CADDataset(opt.data_dir, opt, partition = opt.phase, data_aug = False, do_mixup = False)
+    test_dataset = CADDataset(opt.data_dir, opt, partition = opt.phase, data_aug = False)#, do_mixup = False)
     test_loader = DataLoader(test_dataset, 
         batch_size=opt.batch_size, 
         shuffle=False, 

@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<gom.OHL>
+	<ov size="10">
+		<o id="0">
+			<gom.std.OSymbol label="sofa" x0="173" y0="540" x1="290" y1="433" resize="0" morph="7.2" direction="0.0"/>
+		</o>
+		<o id="1">
+			<gom.std.OSymbol label="sofa" x0="354" y0="315" x1="447" y1="224" resize="0" morph="7.2" direction="0.0"/>
+		</o>
+		<o id="2">
+			<gom.std.OSymbol label="sofa" x0="590" y0="277" x1="673" y1="169" resize="0" morph="7.2" direction="0.0"/>
+		</o>
+		<o id="3">
+			<gom.std.OSymbol label="sofa" x0="916" y0="579" x1="1037" y1="483" resize="0" morph="7.2" direction="0.0"/>
+		</o>
+		<o id="4">
+			<gom.std.OSymbol label="door" x0="550" y0="471" x1="618" y1="401" resize="0" morph="7.2" direction="0.0"/>
+		</o>
+		<o id="5">
+			<gom.std.OSymbol label="door" x0="637" y0="501" x1="710" y1="420" resize="0" morph="7.2" direction="0.0"/>
+		</o>
+		<o id="6">
+			<gom.std.OSymbol label="door" x0="526" y0="585" x1="652" y1="532" resize="0" morph="7.2" direction="0.0"/>
+		</o>
+		<o id="7">
+			<gom.std.OSymbol label="door" x0="374" y0="589" x1="486" y1="516" resize="0" morph="7.2" direction="0.0"/>
+		</o>
+		<o id="8">
+			<gom.std.OSymbol label="table" x0="113" y0="312" x1="193" y1="233" resize="0" morph="7.2" direction="0.0"/>
+		</o>
+		<o id="9">
+			<gom.std.OSymbol label="table" x0="111" y0="190" x1="207" y1="112" resize="0" morph="7.2" direction="0.0"/>
+		</o>
+	</ov>
+</gom.OHL>

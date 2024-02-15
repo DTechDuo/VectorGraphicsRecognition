@@ -30,7 +30,7 @@ class OptInit:
         parser.add_argument('--root_dir', type=str, default='log', help='the dir of experiment results')
 
         # dataset args
-        parser.add_argument('--data_dir', type=str, default='/data/deepgcn/S3DIS')
+        parser.add_argument('--data_dir', type=str, default='./data/FloorPlansGraph5_iter')
         parser.add_argument('--batch_size', default=16, type=int, help='mini-batch size (default:16)')
         parser.add_argument('--in_channels', default=6, type=int, help='the channel size of input point cloud ')
 
@@ -75,7 +75,7 @@ class OptInit:
         parser.add_argument('--n_blocks', default=14, type=int, help='number of basic blocks')
         parser.add_argument('--n_blocks_out', default=7, type=int, help='number of basic blocks')
         parser.add_argument('--dropout', default=0.3, type=float, help='ratio of dropout')
-        parser.add_argument('--arch', default='centernet', type=str, help='ratio of dropout')
+        parser.add_argument('--arch', default='centernet3cc_rpn_gp_iter2', type=str, help='ratio of dropout')
         parser.add_argument('--class_specific', default=False, type=bool, help='ratio of dropout')
         parser.add_argument('--graph', default='bezier', type=str, help='ratio of dropout')
         parser.add_argument('--n_edges', default=3, type=int, help='ratio of dropout')
